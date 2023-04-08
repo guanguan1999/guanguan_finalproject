@@ -1,0 +1,279 @@
+/* ------------------------- *\
+	Globel
+\* ------------------------- */
+*{
+	box-sizing: border-box;
+	position: relative;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+/* ------------------------- *\
+	Layout
+\* ------------------------- */
+
+/* container */
+/* 置中版型容器 */
+.container{
+	max-width: 1140px;
+	width: 100%;
+	border: 1px solid #000;
+	margin: 0 auto;
+	padding-left: 16px;
+	padding-right: 16px;
+
+}
+/* 滿版型容器 */
+.container-fluid{
+	display: block;
+	border: 1px solid #000;
+	height: 100%;
+	width: 100%;
+}
+
+/* grid ststem: row and column */
+.row{
+	border: 1px solid blue;
+	margin-left: -16px;
+	margin-right: -16px;
+}
+.row:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.row-collapse{
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+/* if you 不想要中間的間隔 */
+.row-collapse .col-lg-4,.col-md-6,.col-sm-12{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* 新打的 */
+.col-lg-6,.col-lg-4,.col-lg-3,.col-lg-12,
+.col-md-6,.col-md-4,.col-md-3,.col-md-12,
+.col-sm-6,.col-sm-4,.col-sm-3,.col-sm-12{
+	border: 1px solid red;
+	float: left;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+.col-lg-3{
+	width: 25%;
+}
+.col-lg-4{
+	width: 33.3333333%;
+}
+.col-lg-6{
+	width: 50%;
+}
+.col-lg-12{
+	width: 100%;
+}
+@media screen and (max-width: 768px){
+	.col-md-3{
+		width: 25%;
+	}
+	.col-md-4{
+		width: 33.3333333%;
+	}
+	.col-md-6{
+		width: 50%;
+	}
+	.col-md-12{
+		width: 100%;
+	}
+}
+@media screen and (max-width: 540px){
+	.col-sm-3{
+		width: 25%;
+	}
+	.col-sm-4{
+		width: 33.3333333%;
+	}
+	.col-sm-6{
+		width: 50%;
+	}
+	.col-sm-12{
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+/* ------------------------- *\
+	Component
+\* ------------------------- */
+
+/* btn */
+.btn{
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+	line-height: 24px;
+	padding: 4px 16px;
+	border: 1px solid #fff;
+	color: #fff;
+	border-radius: 4px;
+	transition: all 0.3s;
+}
+/* 主要的按鈕 */
+.btn.btn-primary{
+	background-color: #d5a26f;
+	border: 1px solid #d5a26f;
+	color: #fff;
+}
+.btn.btn-primary:hover{
+	background-color: #b2875c;
+	border: 1px solid #b2875c;
+}
+/* 次要的按鈕 */
+.btn.btn-secondary{
+	border: 1px solid #d5a26f;
+	color: #d5a26f;
+}
+.btn.btn-secondary:hover{
+	background-color: #d5a26f;
+	color: #fff;
+}
+/* 大小的設定 */
+.btn.btn-lg{
+	padding: 8px 32px;
+}
+.btn-group-center{
+	/*border: 1px solid #fff;*/
+	text-align: center;
+}
+.btn-group-center .btn{
+	margin-left: 12px;
+	margin-right: 12px;
+}
+.btn-group-right{
+	text-align: right;
+}
+.btn-group-right .btn{
+	margin-left: 24px;
+}
+@media screen and (max-width: 540px){
+	.btn-group-center{
+		display: flex;
+		flex-direction: column;
+		width: 240px;
+		margin: 0 auto;
+	}
+	.btn-group-center .btn{
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 24px;
+	}
+	.btn-group-center .btn:last-child{
+		margin-bottom: 0;
+	}
+}
+
+
+/* navbar */
+.navbar{
+	height: 92px;
+	background-color: #fff;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+	/* 如果是滿版 */
+	padding: 0 16px;
+}
+.navbar .logo{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	/*border: 1px solid #000;*/
+	background-image: url('../images/logo.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-top: 12px;
+
+	float: left;
+}
+.navbar .nav{
+	/*border: 1px solid #000;*/
+	float: right;
+}
+.navbar .nav .nav-item{
+	float: left;
+	margin-left: 32px;
+}
+.navbar .nav .nav-link{
+	display: inline-block;
+	color: #4a94FF;
+	line-height: 24px;
+	padding: 20px 0;
+	/*border: 1px solid #000;*/
+}
+.navbar .nav .nav-link:after{
+	content: '';
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,0);
+	bottom: 0;
+	width: 0;
+	height: 4px;
+	background-color: #4a94FF;
+	transition: all 0.3s;
+}
+.navbar .nav .nav-link:hover:after{
+	width: 100%;
+}
+/* jumbotron */
+.jumbotron{
+	height: 640px;
+	background-color: #7d7dc5;
+	/* padding-top: 0px;
+	padding-bottom: 0px; */
+}
+@media screen and (max-width: 768px) {
+	.jumbotron{
+		height: 640px;
+		background-color: #111;
+	}
+}
+/* hero */
+.hero{
+	padding-top: 80px;
+	padding-bottom: 80px;
+	border: 1px solid #000;
+}
+@media screen and (max-width: 768px) {
+	.hero{
+		padding-top: 80px;
+		padding-bottom: 80px;
+		border: 1px solid #000;
+	}
+}
+/* card */
+.card{
+	background-color: pink;
+	height: 480px;
+}
+.cmpt-1{
+	margin-bottom: 80px;
+}
+.cmpt-3{
+	margin-bottom: 80px;
+}
+.footer{
+	height: 160px;
+	background-color: #7d7dc5;
+}
